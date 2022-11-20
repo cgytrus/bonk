@@ -24,4 +24,4 @@ play a bonk sound when you bonk your head against a solid object
 - first number is whether the mod is enabled
 - second number is 'bonk only on death'
 - third is 'bonk on wave death'
-- fourth is 'bonk on wave slide' (requires second to be on)
+- fourth is 'bonk on wave slide' (requires second to be off)
