@@ -7,9 +7,11 @@
 #include <fstream>
 #include "extensions2.h"
 
-void addHooks();
+namespace bonk {
+    void addHooks();
+}
 
-namespace config {
+namespace bonk::config {
     static bool enabled = true;
     static bool onlyOnDeath = true;
     static bool onWaveDeath = true;
