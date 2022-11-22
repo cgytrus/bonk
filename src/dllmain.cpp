@@ -30,9 +30,10 @@ matdash::cc::stdcall<void> GameSoundManager_playEffect(std::string file) {
 }
 
 // same here with the xmm registers, both of these have a float in xmm1 as the first argument
-matdash::cc::thiscall<bool> PlayerObject_collidedWithObject(gd::PlayerObject* self, gd::GameObject* obj, CCRect idk) {
+// also the single ccrect arg is replaced with 4 ints cuz ig it breaks due to some compiler optimization or smth
+matdash::cc::thiscall<bool> PlayerObject_collidedWithObject(gd::PlayerObject* self, gd::GameObject* obj, int a, int b, int c, int d) {
     _deathCause = obj;
-    return matdash::orig<&PlayerObject_collidedWithObject>(self, obj, idk);
+    return matdash::orig<&PlayerObject_collidedWithObject>(self, obj, a, b, c, d);
 }
 matdash::cc::thiscall<void> PlayerObject_collidedWithSlope(gd::PlayerObject* self, gd::GameObject* obj, bool idk) {
     _deathCause = obj;
